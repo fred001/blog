@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Doc.Frd.Life</title>
+    <title>Doc Center</title>
 
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -37,7 +37,7 @@
                    $v=$row[1];
 
                    echo '<li> ';
-                   echo '<a href="/'.$v.'">'.$k.'</a>';
+                   echo '<a target="_blank" href="/'.$v.'">'.$k.'</a>';
                    echo '</li>';
                 }
              ?>
