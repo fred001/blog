@@ -99,3 +99,52 @@ $user = Yii::app()->db->createCommand()
 
 
 
+
+## 关联表查询
+  1. 表的配置中增加关联关系
+  BELONGS_TO, HAS_MANY,HAS_ONE,MANY_MANY
+
+  class Post extends CActiveRecord
+  {
+    function relations()
+    {
+      return array(
+          'author'=>array(self::BELONGS_TO, 'User', 'author_id'),
+          'categories'=>array(self::MANY_MANY, 'Category',
+            'tbl_post_category(post_id, category_id)'),
+          );
+    }
+  }
+
+
+  2. 使用
+      $post=Post::model()->findByPk(10)
+      $post->author
+
+
+      $posts=Post::model()->with('author')->findAll();
+      $posts=Post::model()->with('author','categories')->findAll();
+
+  3. 定义更复杂的查询关系
+  class User extends CActiveRecord
+  {
+      public function relations()
+          {
+                return array(
+                          'posts'=>array(self::HAS_MANY, 'Post', 'author_id',
+                                          'order'=>'posts.create_time DESC',
+                                                        'with'=>'categories'),
+                                'profile'=>array(self::HAS_ONE, 'Profile', 'owner_id'),
+                                    );
+                  }
+  }
+
+
+  4.查询时候指定更复杂条件
+    $posts=Post::model()->with('comments')->findAll(array(
+            'order'=>'t.create_time, comments.create_time'
+          ));
+
+
+
+
