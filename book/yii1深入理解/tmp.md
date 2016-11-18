@@ -20,3 +20,6 @@
 ## Yii::createUrl(PATH,PARAMS)
     实际调用  web/CUrlManager.php 来创建
       
+## Yii 模块
+    核心是模块文件继承  CWebModule
+    其它的参照标准目录结构
