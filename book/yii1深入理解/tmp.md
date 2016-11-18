@@ -16,3 +16,7 @@
 ## CHtml
   辅助创建html表单元素
   核心是一个 clientChange  ,不知道干嘛用的
+
+## Yii::createUrl(PATH,PARAMS)
+    实际调用  web/CUrlManager.php 来创建
+      
