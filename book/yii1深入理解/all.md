@@ -148,3 +148,35 @@ $user = Yii::app()->db->createCommand()
 
 
 
+
+## 验证与授权
+  Yii::app()->user  (CWebUser)
+      isGuest()
+      login()
+      logout()
+      checkAccess()
+      name
+
+
+
+      Controller
+      filters() 返回控制方式
+      accessRules () 返回权限控制详细， 可能需要在filter中增加  accessControl
+
+
+      web/CController::runActionWithFilters 中创建所有filter
+      web/filters/CFilterChain::create 中创建了 filter
+      其中创建有两种方式，一种是创建一个新类，一种是查询controller中是否有对应函数
+      所以对于accessControl,应该是调用了CController:filterAccessControl方法
+
+
+      此方法最后创建了 CAccessControlFilter，并且设置了rule (accessRules() 返回的数组） 
+          CAccessControlFilter 中有setRule方法，将数组的rule变成实际的类
+          最终通过这些类来检测
+
+
+          CAccessRule中的 isUsermatched($user) 用来确定用户权限 （硬编码）
+          * = tru
+          * ? 未登录才可以
+          * @ 登录了才可以
+          * admin   用户名必须是admin  $user->getName()
