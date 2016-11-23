@@ -180,3 +180,12 @@ $user = Yii::app()->db->createCommand()
           * ? 未登录才可以
           * @ 登录了才可以
           * admin   用户名必须是admin  $user->getName()
+
+## yii table {{user}} 怎么实现的？
+   CDbCommand 中
+  173       $this->_text=preg_replace('/{{(.*?)}}/',$this->_connection->tablePrefix.'\1',$value);
+
+    原理就是通过正则替换， 加上表前缀而已！ ，其它都没有变动。
+
+
+
