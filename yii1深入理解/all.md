@@ -188,4 +188,13 @@ $user = Yii::app()->db->createCommand()
     原理就是通过正则替换， 加上表前缀而已！ ，其它都没有变动。
 
 
+## 数据库查询 User::model()->findAll() 实际步骤
+    首先检查是否设置 _models，没有则 创建本身
+    最后都是调用  query方法
+    而query() 方法实际上是通过 CDbCommand 方法来创建sql并执行获得结果
 
+
+
+
+
+      
