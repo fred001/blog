@@ -194,6 +194,13 @@ $user = Yii::app()->db->createCommand()
     而query() 方法实际上是通过 CDbCommand 方法来创建sql并执行获得结果
 
 
+##  layout 名字  //xxx   的实现原理
+    /web/CController.php :: resolveViewFile
+
+    代码中对 //进行了判断， 这个表示默认的地址 + viewpath
+    所以 //layouts/html.php 对应   …./views/layouts/html.php
+    这也是其它view的用法
+      
 
 
 
