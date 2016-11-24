@@ -26,3 +26,9 @@ Zend Db Select 支持多种方式，感觉不是很必要，保持一种即可
 
 
 
+## session
+  初次访问网站， 服务器发送  set-cookie 头部给客户端，客户端接受此头部并设置cookie
+  其后客户端都带上此cookie ，每次发送给服务端
+
+  服务端的 session_start() 估计已经会主动处理此cookie
+  当有session id, 则不再发送set_cookie头部了
