@@ -7,6 +7,9 @@ QLabel
     toPlainText
     toHtml
 
+      label.setOpenExternalLinks(True) #允许label中的链接直接被打开
+
+
 
 
 QLineEdit
