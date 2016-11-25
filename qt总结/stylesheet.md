@@ -10,3 +10,7 @@
     4. QT Designer 中增加的样式默认是没有选择器的，需要自己加上
 
 
+
+    linkLabel->setText("<style> a {text-decoration: none} </style> <a href=\"http://blog.csdn.net/fron_csl\">linkLabelTest");
+
+    这种方法是直接写入到text中来去除样式
