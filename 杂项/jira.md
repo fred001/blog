@@ -19,3 +19,6 @@ https://confluence.atlassian.com/adminjiraserver072/connecting-jira-applications
 7.  关闭  /opt/atlassian/jira/bin/stop-jira.sh 
     启动  /opt/atlassian/jira/bin/start-jira.sh 
 
+
+8. 数据库默认字符集合
+  ALTER DATABASE jira  CHARACTER SET utf8 COLLATE utf8_bin
