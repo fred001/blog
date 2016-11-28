@@ -23,3 +23,14 @@
 ## Yii 模块
     核心是模块文件继承  CWebModule
     其它的参照标准目录结构
+
+## Layout如何传递变量
+  render view 时候 render  layout
+
+  1. render view
+  2. if have layout:  render layout with content=VIEW CONTENT
+
+  所以layout中不能直接传递变量
+  有两种方式：
+      1. Yii::app()->params
+      2. $this-> VARIABLE (通过controller中设置此变量)
