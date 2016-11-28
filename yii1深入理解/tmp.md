@@ -34,3 +34,11 @@
   有两种方式：
       1. Yii::app()->params
       2. $this-> VARIABLE (通过controller中设置此变量)
+
+## 控制台执行
+  1. 调用yiic
+  2. 引入 yiic.php
+  3. 引入 framework/yiic.php 
+      初始化适合console环境的配置，最后执行
+
+          核心大概是 commandRunner
