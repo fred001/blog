@@ -60,6 +60,15 @@
   行为支持为对象额外添加属性和方法， 方法通过 __call() 来遍历所包含的行为，最后获得正确的方法来执行
 
 
+## CFormModel 中属性不增加到 rules 则不生效的原因
+    (CFormModel  validate : rules  写法， 怎么赋值的？)
+
+  核心是CActiveForm::validate
+  这其中会将 POST参数赋值给 CFormModel的attributes
+  实际上调用了CFOrmModel::setAttributes
+    在这个方法中，会进行校验，所有不是安全的参数都不会被赋值
+    所以必须将属性增加到  rules() 方法中，并且至少设置校验规则是 safe,然后POST的数据才能在 CActiveForm::validate($model) 之后
+      赋值给$model 
 
 
 
