@@ -42,3 +42,33 @@
       初始化适合console环境的配置，最后执行
 
           核心大概是 commandRunner
+
+## CComponent
+  http://www.digpage.com/behavior.html
+
+  核心是三个功能：  属性，事件，行为
+
+  属性
+    private $name;
+    访问： ->getName() setName() 
+
+  事件：  $this->_e
+  行为：  $this->_m 
+
+
+  事件支持为对象绑定事件， 事件通过 call_user_func来执行
+  行为支持为对象额外添加属性和方法， 方法通过 __call() 来遍历所包含的行为，最后获得正确的方法来执行
+
+
+
+
+
+
+
+
+
+
+
+
+
+
