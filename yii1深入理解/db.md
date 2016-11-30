@@ -119,3 +119,12 @@
 
 
 
+## 各种数据库操作之间的关系
+model()->save:
+  CDbCommandBuilder->createInsertCommand , createUpdateCommand
+  =>   connection->createCommand()  #事实上是组装成 insert语句而已
+
+  对于find 则是  createFindCommand, 并且组装criteria 成sql 最后执行
+
+
+  所以真正执行SQL最后还是  CDbCommand
