@@ -7,6 +7,7 @@ close = numpy.random.random(100)
   talib.MA(close,timeperiod=3) #返回一个数组
 
 #返回三个数组，分别是三条线的值
+#分别是 DIFF , DEF, MACD值 (BAR)
 talib.MACD(real[, fastperiod=?, slowperiod=?, signalperiod=?]) 
 
 ## ADX
