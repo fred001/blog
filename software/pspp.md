@@ -14,3 +14,17 @@
   psppire 是图形界面，直接运行
 
 
+3. 使用
+
+平均数，
+  平均， 中位，众数
+
+
+  众数： Analyze -> Descriptive Statistics -> Frequencies 
+    选择了显示 Median 则会显示 中位数
+
+    平均数 （Mean) : Analyze -> Compare Means -> Means 
+                      Mean 是平均数 stdDev 是标准差
+
+
+                         图标大概是在  Graphs 中显示
