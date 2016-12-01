@@ -20,7 +20,11 @@ talib.MACD(real[, fastperiod=?, slowperiod=?, signalperiod=?])
 array([  nan,   nan,   nan,   nan,   nan,  100.,  100.,  100.,  100.])
 
   talib.PLUS_DI(high, low, close, timeperiod=t)
+  talib.MINUS_DI(high, low, close, timeperiod=t)
+
   talib.PLUS_DM(high, low, close, timeperiod=t)
+  talib.MINUS_DM(high, low, close, timeperiod=t)
+
 talib.DX(high, low, close, timeperiod=t)
 
 
