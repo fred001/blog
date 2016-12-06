@@ -205,3 +205,16 @@ $user = Yii::app()->db->createCommand()
 
 
       
+
+
+####
+    ActiveRecord 如何获得所有字段 ?
+      $table->attributes
+        
+      ActiveRecord 如何复制本身?
+        $table->attributes=....
+          $table->setAttributes(...)
+
+  active save 验证规则失败后查看原因：
+      var_dump($table->save());
+            var_dump($table->getErrors());exit(
