@@ -48,6 +48,8 @@
 
 ### select
   sql="select * from  {{user}} where name=:name"
+
+  $connection=Yii::app()->db;
   $command=$connection->createCommand($sql);
   $command->bindParam(":email",$email,PDO::PARAM_STR);
   $dataReader=$command->query();   // 执行一个 SQL 查询
