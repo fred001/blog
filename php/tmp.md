@@ -32,3 +32,26 @@ Zend Db Select 支持多种方式，感觉不是很必要，保持一种即可
 
   服务端的 session_start() 估计已经会主动处理此cookie
   当有session id, 则不再发送set_cookie头部了
+
+## include path 设置
+
+  Five ways to create include path for PHP
+  One thing that people often complain about PHP is that there are always more than one way to do the same thing in PHP. This is very true for PHP includes. Here are 5 ways to create PHP include path.
+
+  Use php.ini
+
+  Use .htaccess
+
+  Use ini_set function
+
+  Use set_include_path function
+
+  Manually code the path
+
+
+
+  其中最简单的是就是 php.ini 
+    include_path = /home/share/lib/php:.:/usr/share/pear:/usr/share/php
+
+
+  然后就可以到处使用了
