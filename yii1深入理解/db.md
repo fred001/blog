@@ -76,10 +76,39 @@
   // 通过指定的 SQL 语句查找结果中的第一行
   $post=Post::model()->findBySql($sql,$params);
 
+
+  比较好的办法是直接写sql ,参数用 params[:..]=...
+  在实际用途中： 
+  CDbCommandBuilder 中负责组装 cdbcriteria 成sql,最后执行
+
   $criteria=new CDbCriteria;
   $criteria->select='title';  // 只选择 'title' 列
-  $criteria->condition='postID=:postID';
-  $criteria->params=array(':postID'=>10);
+  //$criteria->condition='postID=:postID';
+  //$criteria->params=array(':postID'=>10);
+
+  $criteria->addCondition("id = :id");  
+  $criteria->addCondition('id=1','OR');//这是OR条件，多个条件的时候，该条件是OR而非AND  
+  $criteria->addInCondition('id', array(1,2,3,4,5)); //代表where id IN (1,23,,4,5,);  
+  $criteria->addNotInCondition('id', array(1,2,3,4,5));//与上面正好相法，是NOT IN  
+  $criteria->addCondition('id=1','OR');//这是OR条件，多个条件的时候，该条件是OR而非AND  
+  $criteria->addSearchCondition('name', '分类');//搜索条件，其实代表了。。where name like '%分类%'  
+  $criteria->addBetweenCondition('id', 1, 4);//between 1 and 4   
+
+  $criteria->toArray()
+     
+
+
+  $criteria->params[':id']=1;  
+  $criteria->with = 'xxx'; //调用relations   
+  $criteria->limit = 10;    //取1条数据，如果小于0，则不作处理  
+  $criteria->offset = 1;   //两条合并起来，则表示 limit 10 offset 1,或者代表了。limit 1,10  
+  $criteria->order = 'xxx DESC,XXX ASC' ;//排序条件  
+  $criteria->group = 'group 条件';  
+  $criteria->having = 'having 条件 ';  
+  $criteria->distinct = FALSE; //是否唯一查询 
+
+
+
   $post=Post::model()->find($criteria); // $params 不需要了
 
 
