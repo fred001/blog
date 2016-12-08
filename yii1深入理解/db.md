@@ -130,3 +130,13 @@ model()->save:
 
 
   所以真正执行SQL最后还是  CDbCommand
+
+##  CDbCommand 如何实现的？
+    本质是PDO类， 此类名定义在 CDbConnection::_pdoClass中
+
+    所以CDbCommand 是对 statement的封装
+    SQL语句的组装是由CDbCommand实现的，在 buildQuery中实现
+
+    CDbCommand 组装SQL语句，交给 PDO::Statement来执行
+
+
