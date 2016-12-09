@@ -94,6 +94,9 @@ git设置:
 	git branch -r  //查看远程分支）（如果还是看不到就先 git fetch origin 先）
 	git branch -a  //查看所有分支，包括远程分支
 
+  git fetch origin mobile:mobile   获取远程分支 并在本地创建同名分支，但是没有切换过去
+  git checkout -b local-branchname origin/remote_branchname 获取远程分支 
+
 	git symbolic-ref HEAD refs/heads/[name] ; rm .git/index ; git clean -fdx  // 创建空的分支：(执行命令之前记得先提交你当前分支的修改，否则会被强制删干净没得后悔)
 
 
