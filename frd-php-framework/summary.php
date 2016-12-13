@@ -3,8 +3,8 @@
       array('Install','install.md'),
       array('Tutorial','tutorial.md'),
       array('Reference',array(
-         array('基本构成','Frd框架组成.md'),
-         array('index.php','index.md'),
+         array('base structure','base_structure.md'),
+         array('index.php','index_php.md'),
          array('functions.php','functions.md'),
          array('Frd.php','Frd.md'),
          array('Loader','loader.md'),
