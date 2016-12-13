@@ -9,9 +9,7 @@
 
 
 
-      <p>
-      继承自 Zend_Db
+继承自 Zend_Db
 完全可以参考zend framework 1中的zend db 文档
-      </p>
 
   

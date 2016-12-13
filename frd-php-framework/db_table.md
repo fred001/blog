@@ -1,3 +1,5 @@
+# Frd Db Table
+
 继承自 Zend_Db_Table,并扩展其功能，实现对单表的更多功能。 
 创建一个Table对象。 
 假设已经有一个表 "blog" ,id 为主键。
@@ -29,5 +31,3 @@ $table->deleteWhere($where)
 
 
 $table->exiestsWhere($where);
-
-

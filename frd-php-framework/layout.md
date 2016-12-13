@@ -1,5 +1,4 @@
-
-  # frd framework  layout
+# frd framework  layout
 
       version:  1
       created_at:  2016-04-25
@@ -11,9 +10,7 @@
       None
 
 
-      <p>
-      事实上layout本身就是Frd_Template实现的。
+事实上layout本身就是Frd_Template实现的。
 只是根据惯例叫法不同。
-      </p>
 
   

@@ -3,6 +3,7 @@
       array('Install','install.md'),
       array('Tutorial','tutorial.md'),
       array('Reference',array(
+         array('introduce','intro.md'),
          array('base structure','base_structure.md'),
          array('index.php','index_php.md'),
          array('functions.php','functions.md'),

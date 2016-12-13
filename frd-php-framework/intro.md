@@ -1,5 +1,4 @@
-
-  # Frd framework
+# Frd framework
 
       version:  1
       created_at:  2016-02-08
@@ -11,8 +10,6 @@
       None
 
 
-      <p>
-      
 Frd.php 
 	核心入口文件
 Module.php  
@@ -29,9 +26,4 @@ Db/Table.php
 	数据库单表功能 （扩展自 zend db table)
 functions/
 	额外函数
-  
-            
-
-      </p>
-
   
