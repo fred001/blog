@@ -9,7 +9,7 @@
 
 
 
-继承自 Zend_Db
-完全可以参考zend framework 1中的zend db 文档
+inherit from Zend_DB ,  so just look at  Zend Framework 1.10  document.
+
 
   

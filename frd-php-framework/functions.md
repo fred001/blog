@@ -10,5 +10,9 @@
       None
 
 
-app() :  获得 Frd_App 对象	getModule($name):  获得frd module的对象 
-url($path,$params):  创建一个URL  （格式：  /test/KEY1/VALUE1/KEY2/VALUE2/... )
+app() :  return Frd_App  global  object
+module():  return current module object, if call it out of module's file, will return null
+controller():  return current controller , should use it in controller or  view which after controller loaded
+url($path,$params):   create a url 
+value_get($data,$k,$default=null)   : get  valu from an array with a key , if the key not exists , reutrn default value (null)
+ 

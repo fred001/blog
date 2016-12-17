@@ -10,7 +10,5 @@
       None
 
 
-事实上layout本身就是Frd_Template实现的。
-只是根据惯例叫法不同。
-
+actually layout is also template, just with different name 
   
