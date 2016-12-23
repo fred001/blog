@@ -81,3 +81,13 @@
 
 
 
+
+      CComponent:
+
+        属性必须增加类似 setName, getName 的方法才能使用 ->name=xxx 的方式访问
+          不是设置了属性就能直接 setName,getName的，根mengoto的Object不一样
+
+            
+
+          ActiveRecord: rules
+            rules定义了 setAttributes中会被影响的值, getAttributes似乎不会影响

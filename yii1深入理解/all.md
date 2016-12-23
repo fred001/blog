@@ -218,3 +218,14 @@ $user = Yii::app()->db->createCommand()
   active save 验证规则失败后查看原因：
       var_dump($table->save());
             var_dump($table->getErrors());exit(
+
+
+
+
+强制资源重新刷新 （最后一个参数） (默认应该是复制所有文件)
+$baseUrl = Yii::app()->assetManager->publish($assets,false,-1,true); //extensions/css发布到assets的创建一个随机不冲>      突的文件夹下
+framework/web/CAssetManager.php::publish（） 中最后一个参数
+
+
+YII的作用是让第三方开发的代码可以保证相关资源的路径
+因为第三方并不确定他资源的真正路径，所以有个发布机制，可以让动态创建链接
