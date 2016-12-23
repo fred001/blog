@@ -55,3 +55,6 @@ Zend Db Select 支持多种方式，感觉不是很必要，保持一种即可
 
 
   然后就可以到处使用了
+
+
+# api没有session ,因为每次都不带cookie 
