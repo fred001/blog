@@ -22,3 +22,10 @@ https://confluence.atlassian.com/adminjiraserver072/connecting-jira-applications
 
 8. 数据库默认字符集合
   ALTER DATABASE jira  CHARACTER SET utf8 COLLATE utf8_bin
+
+9. 破解：
+  复制  atlassian-extras-3***.jar 到 /opt/atlassion/jira/atlassian-jira/WEB-INF/lib/ 替换同名文件
+
+  然后重启jira即可
+
+  软件包在51cto下载，/home/unicorn/tmp/jira7.2破解
