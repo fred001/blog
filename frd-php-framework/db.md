@@ -13,3 +13,23 @@ inherit from Zend_DB ,  so just look at  Zend Framework 1.10  document.
 
 
   
+Transaction:
+
+    <?php
+    $db=app()->getDb();
+    $db->beginTransaction();
+
+    try 
+    {
+      $sql="insert into user (username2) values('test')";
+      $db->query($sql);
+
+      $db->commit();
+    }  
+    catch (Exception $e)
+    {
+      $db->rollBack();
+      echo $e->getMessage();
+    }  
+
+
