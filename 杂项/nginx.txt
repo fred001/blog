@@ -1,0 +1,20 @@
+
+location 的次序不是从上到下，而是有特殊的优先次序， 正则的优先普通的
+
+
+http://www.nginx.cn/115.html
+
+nginx location匹配规则
+
+location 优先级官方文档
+
+    Directives with the = prefix that match the query exactly. If found, searching stops.
+    All remaining directives with conventional strings, longest match first. If this match used the ^~ prefix, searching stops.
+    Regular expressions, in order of definition in the configuration file.
+    If #3 yielded a match, that result is used. Else the match from #2 is used.
+
+    =前缀的指令严格匹配这个查询。如果找到，停止搜索。
+    所有剩下的常规字符串，最长的匹配。如果这个匹配使用^〜前缀，搜索停止。
+    正则表达式，在配置文件中定义的顺序。
+    如果第3条规则产生匹配的话，结果被使用。否则，如同从第2条规则被使用。
+
