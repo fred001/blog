@@ -90,3 +90,8 @@ chown www.www /var/lib/php/session
 
 
 yum -y install mutt
+
+yum install php-mbstring
+
+
+
