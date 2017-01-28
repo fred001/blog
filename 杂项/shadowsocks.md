@@ -1,11 +1,4 @@
-
-
-
-
-
-
-
-shadowsocks 科学上网指南
+# shadowsocks 科学上网指南
 
 
 简介：
@@ -47,9 +40,9 @@ shadowsocks 科学上网指南
 
 	客户端：
 
-		sslocal -vv -s 97.107.132.130  -p 2333 -b 120.0.1 -l 1080 -k barfoo! -m aes-256-cfb
-		sslocal -d start
-		sslocal -d stop
+		ss-local -vv -s 97.107.132.130  -p 2333 -b 120.0.1 -l 1080 -k barfoo! -m aes-256-cfb
+		ss-local -d start
+		ss-local -d stop
 
 
 

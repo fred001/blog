@@ -30,3 +30,22 @@
     从公司网络可以同步到阿里云（公司是电信）
 
     本地是联通 
+
+
+    /etc/yum.repo.d/resilio-sync.repo
+
+    [resilio-sync]
+    name=Resilio Sync $basearch
+    baseurl=http://linux-packages.resilio.com/resilio-sync/rpm/$basearch
+    enabled=1
+    gpgcheck=1
+
+
+     rpm --import https://linux-packages.resilio.com/resilio-sync/key.asc
+     sudo yum install resilio-sync
+
+
+    如果有多个btsync目录，处理时候是按照先后顺序的。假如第一个正在索引中，第二个很可能没动静，
+    这时候很容易误会第二个出错了，其实没错。
+
+    建立目录一般应该选第二个，因为可以随时收回客户端权限。
