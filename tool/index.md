@@ -21,7 +21,16 @@
   简单的记账软件
   youmoney
   http://www.mintos.org/skill/youmoney.html
+  https://code.google.com/archive/p/youmoney/downloads (下载地址）
 
+
+
+  网站：
+    薄荷： 介绍开源软件
+    http://www.appinn.com/todolist/ 
+
+    小众软件介绍
+    http://www.appinn.com/todolist/
 
 
 
