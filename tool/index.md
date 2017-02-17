@@ -28,6 +28,7 @@
   个人网盘工具：
   btsync
   https://www.resilio.com/ （国内代理100元获取专业版)
+  http://www.appinn.com/bittorrent-sync-video-lizhi/
 
 
   teamviewer 团队合作远程控制软件
