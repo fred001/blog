@@ -43,3 +43,10 @@ ssh  unicorn.me  "cd /var/www/html/unicorn;git pull"
       </p>
 
   
+
+
+如果遇到远程链接： ssh_exchange_identification: read: Connection reset by peer
+检查  /etc/hosts.allow 和  /etc/hosts.deny
+unicorn.me上必须增加网段到 /etc/hosts.allow ,保持为空则不行，不知道为什么，可能和 sshd配置有关
+另外sshd配置在/etc/ssh/sshd.conf
+日志在 /var/log/secure
