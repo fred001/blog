@@ -13,3 +13,6 @@ ssl_certificate_key /etc/letsencrypt/live/laozuo.org/privkey.pem;
 
 
 续期则调用  letsencrypt-auto renew 即可
+
+
+/letsencrypt-auto certonly --standalone --email iamlosing02@gmail.com -d frd.life -d  admin.frd.life -d resource.frd.life
