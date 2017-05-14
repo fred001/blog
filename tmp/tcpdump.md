@@ -18,3 +18,10 @@ tcpdump  fddi|ip|arp|rarp|tcp|udp   指定网络协议
 
 监听后获得的结果通常保存到文件， 由wireshark 来查看。 
 wireshark也有监听功能，但是不如tcpdump好用。所以仅仅用来查看
+
+
+## 实例
+tcpdump 监听 http get 请求。 
+
+结果可以看到多个tcp （显然建立连接用）
+两个http 包， 分别是请求和响应。因为数据不多，所以没有拆分包。里面内容格式就是文本.
