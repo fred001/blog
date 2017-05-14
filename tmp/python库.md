@@ -34,3 +34,4 @@
 
 其它可能值的研究：
 https://github.com/jobbole/awesome-python-cn
+https://zhuanlan.zhihu.com/p/25553184
