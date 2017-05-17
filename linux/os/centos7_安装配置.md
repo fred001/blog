@@ -157,3 +157,6 @@ ln -sf /lib/systemd/system/graphical.target /etc/systemd/system/default.target
       </p>
 
   
+
+安装 nux repo源
+http://li.nux.ro/
