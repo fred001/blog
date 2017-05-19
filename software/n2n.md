@@ -32,12 +32,16 @@
 
       边缘节点接入连接，并指定本机的ip
       超级节点要是希望其它节点来连接， 也可以再执行这样的命令， 让自己也成为一个边缘节点(同时是中心节点和边缘节点)
-  4. edge -d edge0 -a 10.0.0.10 -c mynetwork -u 1000 -g 1000 -k password -l 1.1.1.1:5000 -m ae:e0:4f:e7:47:5b  
+  4. edge -d n2n1 -a 10.0.0.10 -c mynetwork -u 1000 -g 1000 -k password -l 1.1.1.1:5000 -m ae:e0:4f:e7:47:5b  (可以不用指定网址）
+  4. edge -d n2n1 -a 10.0.0.10 -c mynetwork -u 1000 -g 1000 -k password -l 1.1.1.1:5000 
   5. ifconfig n2n0 查看本机的ip是否建立。 使用ping 来测试
 
 
+  edge -d un2 -c mynetwork -k encryptme -u 99 -g 99 -a 192.168.4.250 -l iamlosing.me:9500
 
 ## 故障排除
   实践中遇到内网机器可以ping, 但是不能ssh 登陆到另一台机器。
   最终通过设置中心服务器的 mtu 1400, 目标机器的mtu 1500 , 内网机器的mtu 1200来解决。 默认内网的mtu 是1400， 但是存在一个路由器， mtu不到1400， 可能问题是这个.
+
+  估计是n2n本身的协议原因,怎么才能深入找到此原因？
 
