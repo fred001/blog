@@ -4,7 +4,7 @@
 
 #### FPF
 
-1. [Intruduce](./Introduce)
+1. [Intruduce](./FPF/Introduce)
 2. Install
 3. Tutorial
 4. Reference
