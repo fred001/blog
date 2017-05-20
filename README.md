@@ -1,4 +1,4 @@
-# Fred's Blog
+# Fred's Document
 
 ## Articles
 
@@ -85,7 +85,6 @@
 ####  Frd-Python-Lib
 
 ## Resources
-
 1. duolinguo 
 2. kehanacdemy
 3. todolist
