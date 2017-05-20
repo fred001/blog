@@ -32,6 +32,9 @@
   urllib2
 
 
+  markdown  :  import markdown, markdown.markdown(text)
+
+
 其它可能值的研究：
 https://github.com/jobbole/awesome-python-cn
 https://zhuanlan.zhihu.com/p/25553184
