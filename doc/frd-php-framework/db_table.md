@@ -1,3 +1,5 @@
+[回到首页](/)
+
 # Frd Db Table
 
 Inherite from Zend_Db_Table, and extended. 

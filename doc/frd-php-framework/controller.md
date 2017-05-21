@@ -1,3 +1,5 @@
+[回到首页](/)
+
 # controller
 
 It's the same as MVC pattern 's  Controller.The difference is it is not an object, it is just a php file .

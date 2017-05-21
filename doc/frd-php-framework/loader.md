@@ -1,3 +1,4 @@
+[回到首页](/)
 
 It is the same rule as Zend Framework 1.10  autoloader rule, but simple .
 if include is  ROOT_PATH/lib

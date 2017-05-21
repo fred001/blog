@@ -1,10 +1,10 @@
+[回到首页](/)
+
 # Frd框架组成
 
-    version:  2  
-    created_at:  2016-04-23  
-    updated_at:  2016-04-25 14:01:31  
-    created at 2016-04-23 19:54:01   
-    update at 2016-04-25 14:01:31  
+    version:  2    
+    created at 2016-04-23 19:54:01     
+    update at 2016-04-25 14:01:31    
 
 
 

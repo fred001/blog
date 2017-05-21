@@ -1,9 +1,8 @@
+[回到首页](/)
+
 # Frd framework
 
       version:  1
-      created_at:  2016-02-08
-      updated_at:  None
-
       created at 2016-02-08 14:50:28 
 
 

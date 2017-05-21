@@ -1,3 +1,5 @@
+[回到首页](/)
+
 # Tutorial
   
 domain  : example.com  also write as DOMAIN

@@ -1,3 +1,4 @@
+[回到首页](/)
 
 1. the default extension is  .phtml
 

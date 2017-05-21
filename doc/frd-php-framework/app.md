@@ -1,3 +1,5 @@
+[回到首页](/)
+
 lib/App.php (Frd_App) 
 
 Frd_App is the platform , and each module is a website . 

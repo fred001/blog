@@ -68,13 +68,10 @@
 10. [孤独的单机游戏](./doc/游戏乱谈/孤独的单机游戏)
 11. [我理想的游戏](./doc/游戏乱谈/我理想的游戏)
 
-#### 杂项
 
 ## Projects
-
-####  Frd-PHP-Framework
-
-####  Frd-Python-Lib
+1. Frd-PHP-Framework
+1. Frd-Python-Lib
 
 ## Resources
 1. duolinguo 
