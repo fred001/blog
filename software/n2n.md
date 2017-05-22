@@ -25,6 +25,9 @@
 ### 安装
   安装git源上的说明
 
+
+  yum -y install openssl-devel
+
   1. 创建 tun0
   2. 进入源代码  make & makeinstall
   3. supernode -l 5000  (中心节点启动，监听）
@@ -36,4 +39,15 @@
   5. ifconfig n2n0 查看本机的ip是否建立。 使用ping 来测试
 
 
+
+
+tunctl -t tun0
+
+edge -d un1 -c mynetwork -k encryptme -u 99 -g 99   -a  192.168.4.100 -l  iamlosing.me:9500
+edge -d un1 -c mynetwork -k encryptme -u 99 -g 99   -a  192.168.4.200  -l  iamlosing.me:9500
+edge -d un1 -c mynetwork -k encryptme -u 99 -g 99   -a  192.168.4.250  -l  iamlosing.me:9500
+
+
+# -f 是强制前台显示
+supernode -l 9500  -f
 
