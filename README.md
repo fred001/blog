@@ -68,6 +68,13 @@
 10. [孤独的单机游戏](./doc/游戏乱谈/孤独的单机游戏)
 11. [我理想的游戏](./doc/游戏乱谈/我理想的游戏)
 
+#### pyside 图形库
+1. [简介](./doc/python/pyside/1.intro)
+2. [基本结构](./doc/python/pyside/2.basic)
+3. [控件](./doc/python/pyside/3.widget)
+4. [对话框](./doc/python/pyside/4.dialog)
+5. [布局](./doc/python/pyside/5.layout)
+6. 示例代码
 
 ## Projects
 1. Frd-PHP-Framework
