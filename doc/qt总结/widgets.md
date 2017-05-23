@@ -31,6 +31,23 @@ QPushButton
     setText()
     text()
 
+QButtonGroup:
+  用来把一组radio, checkbox 等放在一起
+  它本身不负责布局，布局需要另外的layout来处理(比如hboxlayout)
+  理论上这些button 可以放在任何地方
+
+  信号： 
+    pressed
+    released
+    clicked
+
+  常用方法： 
+    setExclusive(bool) 默认估计是true, 但是对于checkbox ，需要是false
+    checkedButton() 返回选中的按钮
+    checkedId() 返回选中的按钮id
+  
+
+
 
 QRadioButton
   signal:
@@ -56,8 +73,26 @@ QComboxBox:
       currentIndexChanged()
       hightlighted()
       addItem("C++")
+      setCurrentIndex(2)
       
+QCalendarWidget:
+  signalL
+  methods:
+    selectedDate() //返回的QDate(2017,11,11)
+
+这三个是个单行控件， 选择其中一个字段， 点击右侧上下箭头增减数字
+QDateTimeEdit //日期+时间
+QDateEdit //日期
+QTimeEdit //时间
     
+
+
+QColorDialog:
+  dialog=QColorDialog(parent=widget) //创建 对话框
+  print dialog.getColor() //打开对话框并获得结果
+
+
+
 QSpinBox
   signal: valueChanged
   methods:
@@ -161,5 +196,17 @@ QToolBar
                         if __name__ == '__main__':
                            main()
 
+
+
+
+dialog=QFileDialog(parent=self)
+  if dialog.exec_():
+  print dialog.selectedFiles()
+
+
+
+LAYOUT:
+  addStretch(1) //增加一个能自动伸展的空白元素
+    否则控件中可以自动伸展的元素就伸展了
 
 
