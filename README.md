@@ -1,9 +1,8 @@
 # Fred's Document
 
-## Articles
+## Documents
 
 #### FPF
-
 1. [Intruduce](./doc/frd-php-framework/intro)
 2. [Install](./doc/frd-php-framework/install)
 3. [Tutorial](./doc/frd-php-framework/tutorial)
