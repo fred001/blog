@@ -73,7 +73,16 @@
 3. [控件](./doc/python/pyside/3.widget)
 4. [对话框](./doc/python/pyside/4.dialog)
 5. [布局](./doc/python/pyside/5.layout)
-6. 示例代码
+6. [消息框](./doc/python/pyside/6.messageBox)
+7. [主窗口](./doc/python/pyside/7.mainwindow)
+
+
+#### 杂记
+
+1. [生活记录](./doc/life/lifelog-2017-05-29)
+
+
+
 
 ## Projects
 1. Frd-PHP-Framework
