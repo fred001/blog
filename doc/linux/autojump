@@ -1,0 +1,42 @@
+# autojump
+
+    快捷跳转到不同路径。 cd的加强。
+
+
+
+#### 安装
+
+    yum install autojump
+
+#### 配置
+
+    在~/.bashrc中加入
+    . /etc/profile.d/autojump.sh
+
+#### 使用
+
+    cd 到不同目录，会记录这些目录到autojump数据库中
+    最常用的有最高权重
+    另外autojump提供了一个快捷命令 j 来实现跳转
+    autojump的数据库是存放在文本中的，
+    ~/.local/share/autojump
+
+
+
+    j 目录 (跳转到目录)
+    jo 目录 (文件浏览器中打开目录)
+    j --stat (查看统计)
+
+####
+
+  功能需求和已知的冲突
+
+  autojump 只能让你跳到那些你已经用 cd 到过的目录。一旦你用 cd 切换到一个特定的目录，这个行为就会被记录到 autojump 的数据库中，这样 autojump 才能工作。不管怎样，在你设定了 autojump 后，你不能跳到那些你没有用 cd 到过的目录。
+  你不能跳到名称以破折号 (-) 开头的目录。或许你可以考虑阅读我的有关操作文件或目录 的文章，尤其是有关操作那些以‘-‘ 或其他特殊字符开头的文件和目录的内容。
+  在 BASH shell 中，autojump 通过修改 $PROMPT_COMMAND 环境变量来跟踪目录的行为，所以强烈建议不要去重写 $PROMPT_COMMAND 这个环境变量。若你需要添加其他的命令到现存的 $PROMPT_COMMAND 环境变量中，请添加到$PROMPT_COMMAND 环境变量的最后。
+
+
+  
+#### 参考
+
+    http://www.linuxdiyf.com/linux/13220.html

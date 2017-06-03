@@ -10,8 +10,6 @@ xfs_fsr: 碎片整理
 xfs_quota: 管理 xfs 文件系统的磁盘配额
 xfs_metadump: 将 xfs 文件系统的元数据 (metadata) 拷贝到一个文件中
 xfs_mdrestore: 从一个文件中将元数据 (metadata) 恢复到 xfs 文件系统
-xfs_growfs: 调整一个 xfs 文件系统大小（只能扩展）
-xfs_freeze    暂停（-f）和恢复（-u）xfs 文件系统
 xfs_logprint: 打印xfs文件系统的日志
 xfs_mkfile: 创建xfs文件系统
 xfs_ncheck: generate pathnames from i-numbers for XFS
@@ -77,3 +75,14 @@ xfsrestore -f sdb1.dump  /mnt/tmp
 xfsrestore -f sdb1.dump2  /mnt/tmp
 
 
+
+#### xfs_repair 修复
+xfs_repair /dev/sdb1 
+
+
+
+#### xfs_freeze    暂停（-f）和恢复（-u）xfs 文件系统
+
+
+##### xfs_growfs: 调整一个 xfs 文件系统大小（只能扩展）
+实际过程中，没有实验成功， 无法增加容量。即使有未分配的空闲容量
