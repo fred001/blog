@@ -33,6 +33,7 @@ updated_at:  2016-05-03 19:51:47
 1. 挂起系统 systemctl suspend
 1. 休眠系统 systemctl hibernate
 1. 使系统进入混合睡眠 systemctl hybrid-sleep
+1. systemctl daemon-reload  重新载入配置文件 (如  unciorn.service )，如果有修改
 1. 怎么创建一个服务？ 
   假设服务名为 unicorn  
   创建一个脚本 unicorn.service  
@@ -42,7 +43,7 @@ updated_at:  2016-05-03 19:51:47
   服务脚本范例：  
 
       [Unit]
-      Description=UNICORN Service
+      Description=unicorn  #这里的描述很关键，
 
       #依赖关系，需要其它服务先启动
       After=syslog.target network.target,audited.service   
@@ -59,10 +60,19 @@ updated_at:  2016-05-03 19:51:47
       RestartSec=30s  
 
       [Install]
-      WantedBy=multi-user.target  #多用户下安装
+      WantedBy=multi-user.target  #多用户下安装,只能设置一个的样子  a.target  b.target 是错误的
 
 
+所有的运行等级
+      0 	runlevel0.target, poweroff.target 	Shut down and power off the system.
+      1 	runlevel1.target, rescue.target 	Set up a rescue shell.
+      2 	runlevel2.target, multi-user.target 	Set up a non-graphical multi-user system.
+      3 	runlevel3.target, multi-user.target 	Set up a non-graphical multi-user system.
+      4 	runlevel4.target, multi-user.target 	Set up a non-graphical multi-user system.
+      5 	runlevel5.target, graphical.target 	Set up a graphical multi-user system.
+      6 	runlevel6.target, reboot.target 	Shut down and reboot the system.
 
+如果安装出现  invalid argument, 可能是 Install 中的配置有错误， 
 
 
 
@@ -102,6 +112,10 @@ systemd 不使用/etc/inittab 文件。
 
 
  如何查看当下运行级别？ 
+ systemctl get-default 
+
+或 ll /etc/systemd/system/default.target
+
 
 runlevel 命令在 systemd 下仍然可以工作。你可以继续使用它，尽管 systemd 使用 'target' 概念(多个的 'target' 可以同时激活)替换了之前系统的 runlevel 。等价的 systemd 命令是 
 
