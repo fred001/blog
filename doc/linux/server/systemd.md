@@ -64,7 +64,8 @@ updated_at:  2016-05-03 19:51:47
       RestartSec=30s  
 
       [Install]
-      WantedBy=multi-user.target  #多用户下安装,只能设置一个的样子  a.target  b.target 是错误的
+      #多用户下安装,只能设置一个的样子  a.target  b.target 是错误的
+      WantedBy=multi-user.target  
 
 
 所有的运行等级
