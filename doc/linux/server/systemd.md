@@ -48,6 +48,10 @@ updated_at:  2016-05-03 19:51:47
       #依赖关系，需要其它服务先启动
       After=syslog.target network.target,audited.service   
       [Service]
+
+      #除了默认的simple,还有其它好几种服务类型， 比如n2n就是forking类型，如果设置错了类型可能会导致服务运行失败
+      Type=simple  
+
       StandardError=syslog+console
       ExecStart=/root/bin/mount_unicorn  #启动命令
       #停止的命令 ，如果没有，会按默认方式依次发送信号   SIGTERM, IGHUP,SIGKILL
@@ -210,3 +214,12 @@ http://fedoraproject.org/wiki/Systemd/zh-cn#.E4.B8.BA.E4.BB.80.E4.B9.88.E6.98.AF
 http://0pointer.de/blog/projects/systemd-docs.html 
 	参考： http://0pointer.de/public/systemd-man/systemd.service.html
 	http://0pointer.de/public/systemd-man/systemd.kill.html
+
+
+  红帽子文档，权威，有四节
+  https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/sect-Managing_Services_with_systemd-Unit_Files.html#sect-Managing_Services_with_systemd-Unit_File_Structure
+
+
+
+  http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html
+  http://blog.csdn.net/fu_wayne/article/details/38018825
