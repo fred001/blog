@@ -206,6 +206,109 @@ ln -sf /lib/systemd/system/multi-user.target /etc/systemd/system/default.target
 ln -sf /lib/systemd/system/graphical.target /etc/systemd/system/default.target
 systemd不使用/etc/inittab文件。
 
+
+#### journalctl
+systemd 自带日志服务 journald，该日志服务的设计初衷是克服现有的 syslog 服务的缺点。比如：
+
+    syslog 不安全，消息的内容无法验证。每一个本地进程都可以声称自己是 Apache PID 4711，而 syslog 也就相信并保存到磁盘上。
+        数据没有严格的格式，非常随意。自动化的日志分析器需要分析人类语言字符串来识别消息。一方面此类分析困难低效；此外日志格式的变化会导致分析代码需要更新甚至重写。
+
+Systemd Journal 用二进制格式保存所有日志信息，用户使用 journalctl 命令来查看日志信息。无需自己编写复杂脆弱的字符串分析处理程序。
+
+
+记录日志
+
+    syslog    
+
+    c:
+    
+    #include <syslog.h>
+    syslog(LOG_NOTICE,"Hell World")
+
+    python:
+    import syslog
+    syslog.syslog("hello world")
+
+
+    甚至可以捕获服务进程在 stdout/stderr输出的所有内容(估计必须是服务进程)
+
+
+    另外提供了原生的c语言库用户提交日志 (systemd/sd-journal.h)
+
+
+    sd_journal_print(LOG_NOTICE,"hello world"),
+    这个方法能包含代码的位置信息,函数，文件，行数等
+    还可以加入更多自定义字段
+
+    对于python
+    from systemd import journal
+    journal.send("hello world")
+
+    php:
+    sd_journal_send("MESSAGE=hello world")
+
+    nodejs也有对应的方法
+
+
+
+配置文件：/etc/systemd/journald.conf
+
+手动创建存储目录  /var/log/journal 若被删掉是不会重建的，除非升级软件包
+若是此目录不存在， 则会保存到 /run/log/journal
+run是重启后丢失的
+
+
+
+journalctl -b 
+  本次启动后的所有日志
+
+
+journalctl -b -p err
+  本地启动后，等级为err的日志
+
+journalctl --since=2012-10-15 --uitil='2011-10-16 23:59:59' #根据日期查询
+journalctl /dev/sda #根据设备查询
+journalctl /usr/lib/systemd/system #根据特定程序查询
+journalctl _PID=1 #查询进程
+
+
+怎么查看一个service的日志
+journalctl -u httpd #查询 unit, 注意后面的d, 可以监控任何一个service了
+
+journalctl -u unicorn #比如查看自定义的服务日志
+
+
+分发
+
+systemd journal本身未提供日志分发功能。
+常见的解决方案，做好单机日志的存储配置之后，通过rsync、btsync等工具收集同步日志至某中心节点进行分析处理。
+另外在systemd-193添加了systemd-journal-gatewayd.service，服务器开启此服务之后，将监听本地19531端口，其他机器可通过HTTP或JSON协议访问服务器得到后者日志，详细介绍(登录验证等)请查看 systemd-journal-gatewayd.service 。
+注：systemd-212引入了 systemd-journal-remote >systemd-journal-remote is a command to receive serialized journal events and store them to the journal.
+
+日志监控和报警
+journal没有监控和报警方面的特性与功能，可以通过日志工具的过滤再配合脚本或程序做监控与报警。
+
+
+journalctl -o json-pretty -f
+  以json格式来查看日志
+
+journalctl  -f  
+  类似 tail -f 的方式监控新日志
+
+
+systemd下服务单元的启动、停止以及进入失败状态都会生成Audit记录，日志记录在 /var/log/audit/audit.log 文件中。 
+
+
+由 Journal 守护进程添加的域将具有下划线前缀(“_”)， 用来标示该区域是可信的，而不是由未知客户端提供的。应用程序自身无法传递以下划线开头的的域名称。这是一个样例展示在客户端传输基础上添加内容的日志条目展示：
+
+
+
+man 手册包含了众多重要的信息，勤奋阅读!
+
+
+内核一旦检测完硬件并组织好了内存，就会运行 /usr/lib/systemd/systemd 可执行程序，这个程序会按顺序依次发起其他程序。（在还没有 Systemd 的日子里，内核会去运行 /sbin/init，随后这个程序会在名为 SysVinit 的系统中运行其余的各种启动脚本。）
+
+
 ####  参考
 https://wiki.archlinux.org/index.php/Systemd_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29#systemd_.E5.9F.BA.E6.9C.AC.E5.B7.A5.E5.85.B7 
 http://www.ibm.com/developerworks/cn/linux/1407_liuming_init1/index.html 
@@ -224,3 +327,15 @@ http://0pointer.de/blog/projects/systemd-docs.html
 
   http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html
   http://blog.csdn.net/fu_wayne/article/details/38018825
+
+
+十分完整的文档， 不过全是英文，比较多
+https://www.freedesktop.org/wiki/Software/systemd/
+
+
+#journal比较详细的文章
+http://www.tuicool.com/articles/EfuYJjy
+
+
+介绍了journal的设计概念
+https://linuxtoy.org/archives/systemd-journal.html
