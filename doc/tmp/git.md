@@ -5,8 +5,29 @@
         updated_at:  2016-04-18 12:54:02
         history:
           update at   2017-05-25
+#### 配置
+  [push]
+    default = simple
+  [user]
+    name = renyj,
+    email = renyj@anchu.com,
+  [core]
+    quotepath = false
+  [diff]
+    tool = vimdiff
+  [difftool]
+    prompt = false
+  [alias]
+    d = difftool
+  [color]
+    ui = true
 
+#### 简介
+      	git是个很不错的版本管理工具。胜在简单和灵活。 svn内置3个分支，必须按照它的开发模式来。而git完全可以不用。git另外好处是创建分支很轻松，当然需要配合功能上的分离才能享受此优点。多数时候git可以本地工作。 基础的应用只需要了解很少的命令，非常容易。
 
+	如果说有缺点，那么缺点是子模块， 当一个项目中应用了另一个git项目，那么怎么管理这个子的git源呢， 这是个麻烦的事。 git中有 子模块概念，然而实际上难以使用。 我的策略是通过 .gitignore屏蔽掉内部的git源，如此放弃子模块的概念，完全当成几个git源合并一起工作。
+
+	用了这么久，我甚至已经忘记了svn的用法。
 
 ## 基本操作
 
@@ -578,4 +599,23 @@ git设置:
 
 最后 /.local/share/bijiben 目录例外
 
+
+
+##### 钩子 hooks
+钩子分成服务端和客户端
+不同的钩子有不同的参数， 有的是没有的。
+另外钩子的脚本必须设置成可运行，否则不会调用
+
+完整参考 
+https://www.digitalocean.com/community/tutorials/how-to-use-git-hooks-to-automate-development-and-deployment-tasks
+
+
+常用： (服务端)
+
+pre-receive #在push之后第一步的操作，没有参数
+update  #push之后，第二步的操作， 
+  参数 remote: ['hooks/update', 'refs/heads/master', '45468d1979b1b82f0a30d187a0f246063defb62d', '78f7b03a54a95f0e0f58d8bacb74f8334320ab74']
+  包含提交的commit id 和提前之前的commit id  (4546是提前的commit id)
+
+post-receive  #push成功之后的操作
 
