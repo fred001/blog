@@ -619,3 +619,13 @@ update  #push之后，第二步的操作，
 
 post-receive  #push成功之后的操作
 
+
+##### git log 过滤
+git log -p -10 | grep Author 获得最近10条记录
+git log --since="2017-06-01" 包含当天
+
+
+https://git-scm.com/book/tr/v2/Git-Basics-Viewing-the-Commit-History
+
+git log --since="2017-06-01" | grep Author | sort | uniq
+
