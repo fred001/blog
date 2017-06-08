@@ -629,3 +629,68 @@ https://git-scm.com/book/tr/v2/Git-Basics-Viewing-the-Commit-History
 
 git log --since="2017-06-01" | grep Author | sort | uniq
 
+
+####  分支管理模型
+  有好几种， 比较出名的是gitflow,但是太复杂了。
+  考虑一种简化版的。
+
+
+
+分支管理模型
+
+
+开发
+	1.  develop 分支开发
+	2.  测试环境 develop 分支测试
+
+  (项目负责人合并develop到master)
+
+	3.  预发环境master 分支测试  
+	4. 线上部署master分支
+
+
+修复bug  (fix分支按时间命名， 以保持合并次序)
+
+  (项目负责人从master创建远程fix分支）
+	1.  开发获取此分支， 并修复
+	2.  测试环境测试此分支并测试
+
+  (项目负责人合并修复分支到master)
+	3.  预发环境测试
+	4. 线上环境更新master
+
+  (项目负责人合并修复分支到develop)
+	5. 合并此分支到develop
+  (项目负责人删除修复分支)
+
+====================
+1.  克隆git repo
+	git clone   www@dev.anchumall.cc
+
+2.  仅获取远端最新信息，但是不改变任何本地状态
+	git fetch origin
+
+3.  本地创建新分支并切换到新分支
+	git checkout -b develop
+
+4. 创建远程分支，和本地分支同名
+	git push origin develop
+
+5. 查看远程的分支
+	git branch -r
+
+6. 查看所有的分支（远程，本地）
+	git branch -a
+
+7. 查看当前本地分支是什么
+	git branch
+
+8. 合并分支到本分支，并且保持原分支的提交记录 （假设当前是master分支）
+	git merge  --no-ff  develop
+
+9.  本地创建和远程对应的分支，并切换过去
+	git checkout -b  develop  origin/develop
+
+10.  删除远程分支
+  git push origin --delete <branchName>  
+
