@@ -309,6 +309,30 @@ man 手册包含了众多重要的信息，勤奋阅读!
 内核一旦检测完硬件并组织好了内存，就会运行 /usr/lib/systemd/systemd 可执行程序，这个程序会按顺序依次发起其他程序。（在还没有 Systemd 的日子里，内核会去运行 /sbin/init，随后这个程序会在名为 SysVinit 的系统中运行其余的各种启动脚本。）
 
 
+
+#### Timer
+
+创建一个  NAME.timer 的服务，运行之即可。
+详细配置参考  man systemd.timer , man systemd.time
+
+
+配置格式： 
+
+    [Unit]
+    Description=Runs myscript every hour
+     
+    [Timer]
+    # 首次运行要在启动后10分钟后
+    OnBootSec=10min
+    # 每次运行间隔时间
+    OnUnitActiveSec=1h
+    Unit=myscript.service #定时运行此服务,由此服务指定具体的执行脚本
+     
+    [Install]
+    WantedBy=multi-user.target
+
+
+
 ####  参考
 https://wiki.archlinux.org/index.php/Systemd_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29#systemd_.E5.9F.BA.E6.9C.AC.E5.B7.A5.E5.85.B7 
 http://www.ibm.com/developerworks/cn/linux/1407_liuming_init1/index.html 
