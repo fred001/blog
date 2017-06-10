@@ -395,6 +395,10 @@ Wed..Sat,Tue 12-10-15 1:2:3 → Tue..Sat 2012-10-15 01:02:03
                      事实上这些就是sytemd.time文档说的。 只是全是英文，而且得实践下就明白了
 
 
+
+OnCalendar=*-*-* *:*:00  每分钟执行一次
+
+
 ####  参考
 https://wiki.archlinux.org/index.php/Systemd_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29#systemd_.E5.9F.BA.E6.9C.AC.E5.B7.A5.E5.85.B7 
 http://www.ibm.com/developerworks/cn/linux/1407_liuming_init1/index.html 
